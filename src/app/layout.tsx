@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "@/app/style/globals.css";
+import { Poppins as FontSans } from "next/font/google";
+import "@/styles/globals.css";
+import { Toaster } from "sonner";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+import { cn } from "@/lib/utils";
+
+const fontSans = FontSans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
 	title: "Kelana dalam",
@@ -16,8 +19,17 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={poppins.className}>{children}</body>
+		<html lang="en" suppressHydrationWarning>
+			<body className={cn("font-sans antialiased", fontSans.variable)}>{children}</body>
+			<Toaster
+				toastOptions={{
+					classNames: {
+						toast: "bg-[#333] bg-opacity-90 backdrop-blur border border-[#363636]",
+						title: "font-poppins text-white mb-1 text-lg",
+						description: "font-poppins text-white",
+					},
+				}}
+			/>
 		</html>
 	);
 }

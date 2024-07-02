@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import heroImage from "@/../public/images/hero-img.jpg";
+import { toast } from "sonner";
 
 export const Header = () => {
 	return (
@@ -17,23 +18,66 @@ export const Header = () => {
 							</a>
 						</li>
 						<li>
-							<a href="#" className="hover:font-semibold hover:text-[#EBC353]">
+							<a
+								href="#"
+								className="hover:font-semibold hover:text-[#EBC353]"
+								onClick={() =>
+									toast.message(
+										`Navigation Triggered!
+`,
+										{
+											description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+										}
+									)
+								}
+							>
 								Mission
 							</a>
 						</li>
 						<li>
-							<a href="#" className="hover:font-semibold hover:text-[#EBC353]">
+							<a
+								href="#"
+								className="hover:font-semibold hover:text-[#EBC353]"
+								onClick={() =>
+									toast.message(
+										`Navigation Triggered!
+`,
+										{
+											description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+										}
+									)
+								}
+							>
 								Timeline
 							</a>
 						</li>
 						<li>
-							<a href="#" className="hover:font-semibold hover:text-[#EBC353]">
+							<a
+								href="#"
+								className="hover:font-semibold hover:text-[#EBC353]"
+								onClick={() =>
+									toast.message(
+										`Navigation Triggered!
+`,
+										{
+											description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+										}
+									)
+								}
+							>
 								About
 							</a>
 						</li>
 					</ul>
 					<div className="flex gap-4">
-						<a href="#">
+						<a
+							href="#"
+							onClick={() =>
+								toast.message(`Button Triggered!`, {
+									description: "Thanks for showing interest! Just a reminder, this is a dummy website, so no real actions or involvement will take place. Have fun exploring!",
+								})
+							}
+						>
 							<div className="size-6 flex shrink-0 p-[6px] items-center justify-center rounded-full bg-[linear-gradient(163deg,_rgba(255,_255,_255,_0.22)_11.82%,_rgba(255,_255,_255,_0.00)_110.32%);] border border-white md:size-11">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12" className="size-3 md:size-5">
 									<path
@@ -57,7 +101,7 @@ export const Header = () => {
 					</div>
 				</div>
 			</nav>
-			<div id="hero-content" className="flex flex-col gap-[3vh] items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:pt-[44px]">
+			<div id="hero-content" className="flex flex-col gap-[3vh] md:gap-[9vh] items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:pt-[44px]">
 				<div className="flex flex-col gap-[2vh] ">
 					<div className="flex flex-col gap-1 md:gap-2 items-center">
 						<div className="hidden md:flex items-center gap-1 md:gap-2 ">
@@ -96,8 +140,15 @@ export const Header = () => {
 						<br className=" hidden md:block" /> about the <span className="font-medium text-white">beauty</span> of <span className="font-medium text-white">flora and fauna.</span>
 					</p>
 				</div>
-				<div className="flex flex-col gap-[10vh] items-center">
-					<a href="#">
+				<div className="flex flex-col gap-[10vh] items-center ">
+					<a
+						href="#"
+						onClick={() =>
+							toast.message(`Button Triggered!`, {
+								description: "Thanks for showing interest! Just a reminder, this is a dummy website, so no real actions or involvement will take place. Have fun exploring!",
+							})
+						}
+					>
 						<div className="flex gap-[5px] items-center pb-1 border-b-2 hover:border-[#EBC353] transition-all duration-300">
 							<p className="text-white">Get Involved</p>
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
@@ -132,6 +183,7 @@ export const Header = () => {
 			<div className="absolute size-full flex shrink-0 top-0 left-0 -z-50">
 				<Image src={heroImage} width={1440} quality={100} alt="hero image" className="size-full object-cover custom-object-position" />
 			</div>
+			<div className="bg-opacity-5"></div>
 		</header>
 	);
 };
