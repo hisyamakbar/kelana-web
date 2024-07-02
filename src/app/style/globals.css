@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.custom-object-position {
+		object-position: 70%;
+	}
+
+	.text-gradient-hero {
+		background: linear-gradient(69deg, #0d0d0d 31.16%, rgba(13, 13, 13, 0.15) 134.93%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
