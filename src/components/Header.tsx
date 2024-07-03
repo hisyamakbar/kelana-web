@@ -7,7 +7,7 @@ export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className="h-dvh mx-auto relative px-5 md:px-[70px] lg:px-[140px] md:pt-[44px]">
+		<header className="h-dvh mx-auto relative px-5 md:px-[70px] lg:px-[140px] pt-3 md:pt-[24px]">
 			<div className={isOpen ? `inset-0 bg-[#252D29]  absolute bottom-0 left-0 lg:hidden z-40 ` : `inset-0 hidden bottom-0 left-0`} onClick={() => setIsOpen(!isOpen)}>
 				<div className="absolute inset-0 bg-nav-pattern bg-center [mask-image:radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)]"></div>
 				<ul className="flex flex-col items-center font-medium text-white gap-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 *:py-3">
@@ -69,7 +69,7 @@ export const Header = () => {
 				<div className="flex items-center justify-between py-4">
 					<a href="#">
 						<div className="flex gap-1 items-center">
-							<div className="flex shrink-0 size-6 md:size-11">
+							<div className="flex shrink-0 size-6 md:size-[28px]">
 								<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-full">
 									<path d="M21.625 11.3125C21.625 17.0079 17.0079 21.625 11.3125 21.625H1V11.3125C1 5.61706 5.61706 1 11.3125 1C17.0079 1 21.625 5.61706 21.625 11.3125Z" fill="#EBC353" />
 									<path d="M21.625 31.9375C21.625 26.2421 26.2421 21.625 31.9375 21.625H42.25V31.9375C42.25 37.6329 37.6329 42.25 31.9375 42.25C26.2421 42.25 21.625 37.6329 21.625 31.9375Z" fill="#EBC353" />
@@ -166,7 +166,7 @@ export const Header = () => {
 					</div>
 				</div>
 			</nav>
-			<div id="hero-content" className="flex flex-col gap-[3vh] md:gap-[9vh] items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:pt-[44px]">
+			<div id="hero-content" className="flex flex-col gap-[9vh] md:gap-[9vh] items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:pt-[44px]">
 				<div className="flex flex-col gap-[2vh] ">
 					<div className="flex flex-col items-center">
 						<div className="hidden md:flex items-center gap-1 md:gap-2 ">
@@ -221,7 +221,7 @@ export const Header = () => {
 							</svg>
 						</div>
 					</a>
-					<a href="#" className="flex flex-col items-center gap-3">
+					<a href="#" className="flex-col items-center gap-3 hidden md:flex">
 						<div className="animate-pulse flex shrink-0 p-[10px] items-center justify-center rounded-full bg-[linear-gradient(163deg,_rgba(255,_255,_255,_0.22)_11.82%,_rgba(255,_255,_255,_0.00)_110.32%);] border border-white">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
 								<path
