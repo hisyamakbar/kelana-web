@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const fontSans = FontSans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-	title: "Kelana dalam",
+	title: "Kelana",
 	description:
 		"Discover the enchanting jungle interior of Kalimantan with Kelana. Immerse yourself in the breathtaking flora and fauna, and uncover the hidden gems of this tropical paradise. Explore now to learn more about the natural wonders that await.",
 };

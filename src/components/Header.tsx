@@ -1,15 +1,84 @@
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import heroImage from "@/../public/images/hero-img.jpg";
 import { toast } from "sonner";
 
 export const Header = () => {
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<header className="h-dvh mx-auto relative px-5 md:px-[70px] lg:px-[140px] md:pt-[44px]">
-			<nav className="relative">
+			<div className={isOpen ? `inset-0 bg-[#252D29]  absolute bottom-0 left-0 lg:hidden z-40 ` : `inset-0 hidden bottom-0 left-0`} onClick={() => setIsOpen(!isOpen)}>
+				<div className="absolute inset-0 bg-nav-pattern bg-center [mask-image:radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_rgba(255,_255,_255,_0.00)_100%)]"></div>
+				<ul className="flex flex-col items-center font-medium text-white gap-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 *:py-3">
+					<li>
+						<a href="#" className="text-[#EBC353] font-semibold hover:font-semibold hover:text-[#EBC353] text-xl leading-[30px]">
+							Home
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="hover:font-semibold hover:text-[#EBC353] text-xl leading-[30px]"
+							onClick={() =>
+								toast.message(`Navigation Triggered!`, {
+									description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+								})
+							}
+						>
+							Mission
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="hover:font-semibold hover:text-[#EBC353] text-xl leading-[30px]"
+							onClick={() =>
+								toast.message(
+									`Navigation Triggered!
+`,
+									{
+										description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+									}
+								)
+							}
+						>
+							Timeline
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="hover:font-semibold hover:text-[#EBC353] text-xl leading-[30px]"
+							onClick={() =>
+								toast.message(
+									`Navigation Triggered!
+`,
+									{
+										description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+									}
+								)
+							}
+						>
+							About
+						</a>
+					</li>
+				</ul>
+			</div>
+			<nav className="relative z-50">
 				<div className="flex items-center justify-between py-4">
 					<a href="#">
-						<p className="text-sm leading-[21px] font-bold tracking-[0.07px] text-white md:text-xl md:leading-[30px]">Kelana dalam</p>
+						<div className="flex gap-1 items-center">
+							<div className="flex shrink-0 size-6 md:size-11">
+								<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-full">
+									<path d="M21.625 11.3125C21.625 17.0079 17.0079 21.625 11.3125 21.625H1V11.3125C1 5.61706 5.61706 1 11.3125 1C17.0079 1 21.625 5.61706 21.625 11.3125Z" fill="#EBC353" />
+									<path d="M21.625 31.9375C21.625 26.2421 26.2421 21.625 31.9375 21.625H42.25V31.9375C42.25 37.6329 37.6329 42.25 31.9375 42.25C26.2421 42.25 21.625 37.6329 21.625 31.9375Z" fill="#EBC353" />
+									<path d="M1 31.9375C1 37.6329 5.61706 42.25 11.3125 42.25H21.625V31.9375C21.625 26.2421 17.0079 21.625 11.3125 21.625C5.61706 21.625 1 26.2421 1 31.9375Z" fill="#EBC353" />
+									<path d="M42.25 11.3125C42.25 5.61706 37.6329 1 31.9375 1H21.625V11.3125C21.625 17.0079 26.2421 21.625 31.9375 21.625C37.6329 21.625 42.25 17.0079 42.25 11.3125Z" fill="#EBC353" />
+								</svg>
+							</div>
+							<p className="text-sm leading-[21px] font-bold tracking-[0.07px] text-white md:text-xl md:leading-[30px]">Kelana</p>
+						</div>
 					</a>
 					<ul className="hidden lg:flex font-medium text-white gap-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
 						<li>
@@ -22,13 +91,9 @@ export const Header = () => {
 								href="#"
 								className="hover:font-semibold hover:text-[#EBC353]"
 								onClick={() =>
-									toast.message(
-										`Navigation Triggered!
-`,
-										{
-											description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
-										}
-									)
+									toast.message(`Navigation Triggered!`, {
+										description: "You've clicked a link! Just a heads-up, this is a dummy website, so there's no navigation to other pages. Feel free to explore everything here!",
+									})
 								}
 							>
 								Mission
@@ -91,19 +156,19 @@ export const Header = () => {
 								</svg>
 							</div>
 						</a>
-						<a href="#" className="lg:hidden">
+						<button onClick={(e) => setIsOpen(!isOpen)} className="lg:hidden">
 							<div className="size-6 md:size-11 flex shrink-0">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="size-full">
 									<path stroke="#fff" strokeLinecap="round" strokeWidth="1.5" d="M3 7h18M3 12h18M3 17h18"></path>
 								</svg>
 							</div>
-						</a>
+						</button>
 					</div>
 				</div>
 			</nav>
 			<div id="hero-content" className="flex flex-col gap-[3vh] md:gap-[9vh] items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:pt-[44px]">
 				<div className="flex flex-col gap-[2vh] ">
-					<div className="flex flex-col gap-1 md:gap-2 items-center">
+					<div className="flex flex-col items-center">
 						<div className="hidden md:flex items-center gap-1 md:gap-2 ">
 							<div className="size-4 md:size-5 flex shrink-0">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20" className="size-full">
@@ -157,7 +222,7 @@ export const Header = () => {
 						</div>
 					</a>
 					<a href="#" className="flex flex-col items-center gap-3">
-						<div className="animate-bounce flex shrink-0 p-[10px] items-center justify-center rounded-full bg-[linear-gradient(163deg,_rgba(255,_255,_255,_0.22)_11.82%,_rgba(255,_255,_255,_0.00)_110.32%);] border border-white">
+						<div className="animate-pulse flex shrink-0 p-[10px] items-center justify-center rounded-full bg-[linear-gradient(163deg,_rgba(255,_255,_255,_0.22)_11.82%,_rgba(255,_255,_255,_0.00)_110.32%);] border border-white">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
 								<path
 									stroke="#fff"

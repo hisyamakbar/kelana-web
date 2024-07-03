@@ -72,8 +72,8 @@ module.exports = {
 				sans: ["var(--font-sans)", ...fontFamily.sans],
 				poppins: ["Poppins", ...fontFamily.sans],
 			},
-			backgroundColor: {
-				bgBlur: "linear-gradient(163deg, rgba(255, 255, 255, 0.22) 11.82%, rgba(255, 255, 255, 0.00) 110.32%)",
+			backgroundImage: {
+				"nav-pattern": "url('/images/grid.svg')",
 			},
 		},
 	},
